@@ -17,6 +17,22 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <header class="topbar" aria-label="Navegação principal">
+      <div class="container topbar__content" data-animate>
+        <a class="topbar__brand" href="#inicio">Black Vitalícia</a>
+        <nav class="topbar__nav" aria-label="Sessões da página">
+          <a href="#resultados">Resultados</a>
+          <a href="#ecossistema">Ecossistema</a>
+          <a href="#jornada">Jornada</a>
+          <a href="#depoimentos">Depoimentos</a>
+          <a href="#duvidas">Dúvidas</a>
+        </nav>
+        <button class="button button--outline topbar__cta" type="button" data-scroll-target="#vip-form">
+          Lista VIP
+        </button>
+      </div>
+    </header>
+
     <div class="exit-popup" id="exit-popup" aria-hidden="true">
       <div class="exit-popup__backdrop" data-close-popup></div>
       <div class="exit-popup__card" role="dialog" aria-modal="true" aria-labelledby="exit-popup-title">
@@ -45,8 +61,9 @@
             <img src="assets/user_photo.jpg" alt="Carlos Magno apresentando a oferta" loading="eager" />
           </picture>
           <div class="hero__overlay"></div>
+          <div class="hero__aurora"></div>
         </div>
-        <div class="hero__content container">
+        <div class="hero__content container" data-animate>
           <div class="hero__badge">Acesso vitalício + oferta irrepetível</div>
           <h1 class="hero__title">
             A
@@ -58,15 +75,15 @@
             liberdade financeira com estratégias comprovadas por milhares de alunos.
           </p>
 
-          <div class="hero__highlights" data-hero-highlights></div>
+          <div class="hero__highlights" data-hero-highlights data-animate></div>
 
-          <div class="hero__details">
+          <div class="hero__details" data-animate>
             <span>📍 Live 100% online e gratuita</span>
             <span>🗓️ 13 de novembro, às 20h</span>
             <span>⏳ Vagas extremamente limitadas</span>
           </div>
 
-          <div class="hero__countdown" aria-label="Contagem regressiva para a live">
+          <div class="hero__countdown" aria-label="Contagem regressiva para a live" data-animate>
             <div class="countdown" data-countdown>
               <div class="countdown__item">
                 <span class="countdown__value" data-countdown-part="days">00</span>
@@ -88,7 +105,7 @@
             <p class="countdown__caption">Live Black Vitalícia Milionária 2025</p>
           </div>
 
-          <div class="hero__actions">
+          <div class="hero__actions" data-animate>
             <button class="button button--primary" type="button" data-scroll-target="#vip-form">
               Quero ser avisado na hora!
             </button>
@@ -98,66 +115,81 @@
             </button>
           </div>
 
-          <div class="hero__assurances">
+          <div class="hero__assurances" data-animate>
             <span>🔒 Garantia de privacidade nos seus dados</span>
             <span>♾️ Atualizações vitalícias inclusas</span>
           </div>
+
+          <div class="hero__guarantee" data-animate>
+            <div class="hero__guarantee-header">
+              <span class="hero__guarantee-icon">∞</span>
+              <div>
+                <p class="hero__guarantee-title">O que está incluso na condição vitalícia</p>
+                <p class="hero__guarantee-subtitle">Tudo o que você precisa para dominar investimentos em uma plataforma só.</p>
+              </div>
+            </div>
+            <ul class="hero__guarantee-list">
+              <li>Mentoria ao vivo mensal com revisão de carteira e plano personalizado.</li>
+              <li>Radar semanal de oportunidades com análises em múltiplos mercados.</li>
+              <li>Comunidade premium com networking de alto nível e suporte direto.</li>
+            </ul>
+          </div>
         </div>
       </section>
 
-      <section class="stats" aria-label="Resultados comprovados">
+      <section class="stats" id="resultados" aria-label="Resultados comprovados">
         <div class="container">
-          <div class="section-header">
+          <div class="section-header" data-animate>
             <h2>Resultados reais da comunidade</h2>
             <p>Milhares de alunos aplicando estratégias com segurança e escala.</p>
           </div>
-          <div class="stats__grid" data-stats></div>
+          <div class="stats__grid" data-stats data-animate></div>
         </div>
       </section>
 
-      <section class="modules" aria-label="Conteúdo incluso">
+      <section class="modules" id="ecossistema" aria-label="Conteúdo incluso">
         <div class="container">
-          <div class="section-header">
+          <div class="section-header" data-animate>
             <h2>O ecossistema completo em um só lugar</h2>
             <p>Programas complementares para multiplicar patrimônio em qualquer cenário.</p>
           </div>
-          <div class="modules__grid" data-modules></div>
+          <div class="modules__grid" data-modules data-animate></div>
         </div>
       </section>
 
-      <section class="timeline" aria-label="Linha do tempo da experiência">
+      <section class="timeline" id="jornada" aria-label="Linha do tempo da experiência">
         <div class="container">
-          <div class="section-header">
+          <div class="section-header" data-animate>
             <h2>O que acontece a partir de agora</h2>
             <p>Três etapas para acelerar sua evolução nos investimentos.</p>
           </div>
-          <div class="timeline__grid" data-timeline></div>
+          <div class="timeline__grid" data-timeline data-animate></div>
         </div>
       </section>
 
-      <section class="testimonials" aria-label="Histórias de transformação">
+      <section class="testimonials" id="depoimentos" aria-label="Histórias de transformação">
         <div class="container">
-          <div class="section-header">
+          <div class="section-header" data-animate>
             <h2>Transformações que falam por si</h2>
             <p>Resultados alcançados por quem decidiu agir com estratégia.</p>
           </div>
-          <div class="testimonials__grid" data-testimonials></div>
+          <div class="testimonials__grid" data-testimonials data-animate></div>
         </div>
       </section>
 
-      <section class="faq" aria-label="Perguntas frequentes">
+      <section class="faq" id="duvidas" aria-label="Perguntas frequentes">
         <div class="container">
-          <div class="section-header">
+          <div class="section-header" data-animate>
             <h2>Tire suas dúvidas antes da live</h2>
             <p>Informações essenciais para aproveitar a oferta vitalícia.</p>
           </div>
-          <div class="faq__items" data-faq></div>
+          <div class="faq__items" data-faq data-animate></div>
         </div>
       </section>
 
       <section class="form" aria-label="Confirme sua presença">
         <div class="container">
-          <div class="form__card">
+          <div class="form__card" data-animate>
             <div class="form__intro">
               <p class="form__kicker">Inscreva-se agora</p>
               <h2>Lista VIP para a live Black Vitalícia Milionária</h2>
