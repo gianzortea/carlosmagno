@@ -118,9 +118,11 @@ function populateHighlights() {
   const container = document.querySelector("[data-hero-highlights]");
   if (!container) return;
   const fragment = document.createDocumentFragment();
-  heroHighlights.forEach((item) => {
+  heroHighlights.forEach((item, index) => {
     const card = document.createElement("article");
     card.className = "highlight-card";
+    card.setAttribute("data-animate", "");
+    card.style.setProperty("--animate-delay", `${index * 0.08}s`);
     card.innerHTML = `
       <p class="highlight-card__title">${item.title}</p>
       <p class="highlight-card__description">${item.description}</p>
@@ -134,9 +136,11 @@ function populateStats() {
   const container = document.querySelector("[data-stats]");
   if (!container) return;
   const fragment = document.createDocumentFragment();
-  stats.forEach((item) => {
+  stats.forEach((item, index) => {
     const card = document.createElement("article");
     card.className = "stats-card";
+    card.setAttribute("data-animate", "");
+    card.style.setProperty("--animate-delay", `${0.1 + index * 0.08}s`);
     card.innerHTML = `
       <span class="stats-card__icon">${item.icon}</span>
       <span class="stats-card__value">${item.value}</span>
@@ -151,10 +155,12 @@ function populateModules() {
   const container = document.querySelector("[data-modules]");
   if (!container) return;
   const fragment = document.createDocumentFragment();
-  modules.forEach((module) => {
+  modules.forEach((module, index) => {
     const card = document.createElement("article");
     card.className = "module-card";
     card.style.setProperty("--module-gradient", module.gradient);
+    card.setAttribute("data-animate", "");
+    card.style.setProperty("--animate-delay", `${0.1 + index * 0.08}s`);
     card.innerHTML = `
       <div class="module-card__content">
         <span class="module-card__icon">${module.icon}</span>
@@ -171,10 +177,12 @@ function populateTimeline() {
   const container = document.querySelector("[data-timeline]");
   if (!container) return;
   const fragment = document.createDocumentFragment();
-  timeline.forEach((item) => {
+  timeline.forEach((item, index) => {
     const card = document.createElement("article");
     card.className = "timeline-card";
     card.style.setProperty("--timeline-gradient", item.gradient);
+    card.setAttribute("data-animate", "");
+    card.style.setProperty("--animate-delay", `${0.1 + index * 0.1}s`);
     card.innerHTML = `
       <div class="timeline-card__content">
         <span class="timeline-card__time">${item.time}</span>
@@ -191,9 +199,11 @@ function populateTestimonials() {
   const container = document.querySelector("[data-testimonials]");
   if (!container) return;
   const fragment = document.createDocumentFragment();
-  testimonials.forEach((item) => {
+  testimonials.forEach((item, index) => {
     const card = document.createElement("article");
     card.className = "testimonial-card";
+    card.setAttribute("data-animate", "");
+    card.style.setProperty("--animate-delay", `${index * 0.12}s`);
     card.innerHTML = `
       <span class="testimonial-card__avatar">${item.avatar}</span>
       <h3 class="testimonial-card__name">${item.name}</h3>
@@ -209,9 +219,11 @@ function populateFaq() {
   const container = document.querySelector("[data-faq]");
   if (!container) return;
   const fragment = document.createDocumentFragment();
-  faqs.forEach((item) => {
+  faqs.forEach((item, index) => {
     const card = document.createElement("article");
     card.className = "faq-item";
+    card.setAttribute("data-animate", "");
+    card.style.setProperty("--animate-delay", `${index * 0.08}s`);
     card.innerHTML = `
       <h3 class="faq-item__question">${item.question}</h3>
       <p class="faq-item__answer">${item.answer}</p>
@@ -373,6 +385,41 @@ function setCurrentYear() {
   }
 }
 
+function initRevealAnimations() {
+  const animatedElements = document.querySelectorAll("[data-animate]");
+  if (!animatedElements.length) return;
+
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (prefersReducedMotion) {
+    animatedElements.forEach((element) => {
+      element.classList.add("is-visible");
+    });
+    return;
+  }
+
+  const observer = new IntersectionObserver(
+    (entries, obs) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          obs.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.2,
+      rootMargin: "0px 0px -10% 0px",
+    }
+  );
+
+  animatedElements.forEach((element, index) => {
+    if (!element.style.getPropertyValue("--animate-delay")) {
+      element.style.setProperty("--animate-delay", `${index * 0.07}s`);
+    }
+    observer.observe(element);
+  });
+}
+
 window.addEventListener("DOMContentLoaded", () => {
   populateHighlights();
   populateStats();
@@ -387,4 +434,5 @@ window.addEventListener("DOMContentLoaded", () => {
   initExitPopup();
   initMarquee();
   setCurrentYear();
+  initRevealAnimations();
 });
