@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Black Vitalícia Milionária</title>
+    <meta
+      name="description"
+      content="Garanta acesso vitalício ao ecossistema de treinamentos e mentoria Black Vitalícia Milionária. Inscreva-se para a live exclusiva de 13/11."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="exit-popup" id="exit-popup" aria-hidden="true">
+      <div class="exit-popup__backdrop" data-close-popup></div>
+      <div class="exit-popup__card" role="dialog" aria-modal="true" aria-labelledby="exit-popup-title">
+        <button class="exit-popup__close" type="button" data-close-popup aria-label="Fechar aviso">&times;</button>
+        <h2 class="exit-popup__title" id="exit-popup-title">Não vá embora ainda!</h2>
+        <p class="exit-popup__text">
+          A condição vitalícia é limitada e a live começa em breve. Garanta sua inscrição para receber o link exclusivo.
+        </p>
+        <button class="button button--primary" type="button" data-scroll-target="#vip-form">
+          Quero garantir minha vaga
+        </button>
+      </div>
+    </div>
+
+    <header class="announcement" aria-label="Comunicado importante">
+      <div class="announcement__marquee" data-marquee>
+        ⚡ ACESSO VITALÍCIO GARANTIDO • LIVE BLACK VITALÍCIA MILIONÁRIA 2025 • CONDIÇÃO ÚNICA E LIMITADA • GARANTA SUA VAGA ⚡
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="inicio">
+        <div class="hero__media" aria-hidden="true">
+          <picture>
+            <source srcset="assets/user_photo.webp" type="image/webp" />
+            <img src="assets/user_photo.jpg" alt="Carlos Magno apresentando a oferta" loading="eager" />
+          </picture>
+          <div class="hero__overlay"></div>
+        </div>
+        <div class="hero__content container">
+          <div class="hero__badge">Acesso vitalício + oferta irrepetível</div>
+          <h1 class="hero__title">
+            A
+            <span class="hero__title-highlight">melhor condição da história</span>
+            para transformar seu patrimônio de forma definitiva.
+          </h1>
+          <p class="hero__description">
+            Entre para a comunidade que domina investimentos em múltiplos mercados, recebe atualizações contínuas e garante
+            liberdade financeira com estratégias comprovadas por milhares de alunos.
+          </p>
+
+          <div class="hero__highlights" data-hero-highlights></div>
+
+          <div class="hero__details">
+            <span>📍 Live 100% online e gratuita</span>
+            <span>🗓️ 13 de novembro, às 20h</span>
+            <span>⏳ Vagas extremamente limitadas</span>
+          </div>
+
+          <div class="hero__countdown" aria-label="Contagem regressiva para a live">
+            <div class="countdown" data-countdown>
+              <div class="countdown__item">
+                <span class="countdown__value" data-countdown-part="days">00</span>
+                <span class="countdown__label">Dias</span>
+              </div>
+              <div class="countdown__item">
+                <span class="countdown__value" data-countdown-part="hours">00</span>
+                <span class="countdown__label">Horas</span>
+              </div>
+              <div class="countdown__item">
+                <span class="countdown__value" data-countdown-part="minutes">00</span>
+                <span class="countdown__label">Minutos</span>
+              </div>
+              <div class="countdown__item">
+                <span class="countdown__value" data-countdown-part="seconds">00</span>
+                <span class="countdown__label">Segundos</span>
+              </div>
+            </div>
+            <p class="countdown__caption">Live Black Vitalícia Milionária 2025</p>
+          </div>
+
+          <div class="hero__actions">
+            <button class="button button--primary" type="button" data-scroll-target="#vip-form">
+              Quero ser avisado na hora!
+            </button>
+            <button class="button button--outline" type="button" id="whatsapp-button">
+              <span class="button__icon">WA</span>
+              Conversar no WhatsApp agora
+            </button>
+          </div>
+
+          <div class="hero__assurances">
+            <span>🔒 Garantia de privacidade nos seus dados</span>
+            <span>♾️ Atualizações vitalícias inclusas</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="stats" aria-label="Resultados comprovados">
+        <div class="container">
+          <div class="section-header">
+            <h2>Resultados reais da comunidade</h2>
+            <p>Milhares de alunos aplicando estratégias com segurança e escala.</p>
+          </div>
+          <div class="stats__grid" data-stats></div>
+        </div>
+      </section>
+
+      <section class="modules" aria-label="Conteúdo incluso">
+        <div class="container">
+          <div class="section-header">
+            <h2>O ecossistema completo em um só lugar</h2>
+            <p>Programas complementares para multiplicar patrimônio em qualquer cenário.</p>
+          </div>
+          <div class="modules__grid" data-modules></div>
+        </div>
+      </section>
+
+      <section class="timeline" aria-label="Linha do tempo da experiência">
+        <div class="container">
+          <div class="section-header">
+            <h2>O que acontece a partir de agora</h2>
+            <p>Três etapas para acelerar sua evolução nos investimentos.</p>
+          </div>
+          <div class="timeline__grid" data-timeline></div>
+        </div>
+      </section>
+
+      <section class="testimonials" aria-label="Histórias de transformação">
+        <div class="container">
+          <div class="section-header">
+            <h2>Transformações que falam por si</h2>
+            <p>Resultados alcançados por quem decidiu agir com estratégia.</p>
+          </div>
+          <div class="testimonials__grid" data-testimonials></div>
+        </div>
+      </section>
+
+      <section class="faq" aria-label="Perguntas frequentes">
+        <div class="container">
+          <div class="section-header">
+            <h2>Tire suas dúvidas antes da live</h2>
+            <p>Informações essenciais para aproveitar a oferta vitalícia.</p>
+          </div>
+          <div class="faq__items" data-faq></div>
+        </div>
+      </section>
+
+      <section class="form" aria-label="Confirme sua presença">
+        <div class="container">
+          <div class="form__card">
+            <div class="form__intro">
+              <p class="form__kicker">Inscreva-se agora</p>
+              <h2>Lista VIP para a live Black Vitalícia Milionária</h2>
+              <p>Garanta o link exclusivo, receba materiais de aquecimento e seja avisado minutos antes de abrirmos a sala.</p>
+            </div>
+            <form id="vip-form" class="form__fields" autocomplete="on" novalidate>
+              <label class="form__label" for="name">Nome completo</label>
+              <input class="form__input" id="name" name="name" type="text" placeholder="Como você gostaria de ser chamado(a)?" required />
+
+              <label class="form__label" for="email">E-mail</label>
+              <input class="form__input" id="email" name="email" type="email" placeholder="Seu melhor e-mail" required />
+
+              <label class="form__label" for="whatsapp">WhatsApp</label>
+              <input
+                class="form__input"
+                id="whatsapp"
+                name="whatsapp"
+                type="tel"
+                placeholder="(11) 99999-9999"
+                inputmode="tel"
+                required
+              />
+
+              <button class="button button--primary form__submit" type="submit">Quero entrar na lista VIP</button>
+              <div class="form__feedback" id="form-feedback" role="status" aria-live="polite"></div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container footer__content">
+        <div>
+          <p class="footer__brand">Black Vitalícia Milionária</p>
+          <p class="footer__text">Oferta especial com acesso vitalício a mentorias, treinamentos e comunidade exclusiva.</p>
+        </div>
+        <p class="footer__copy">&copy; <span data-current-year></span> Carlos Magno. Todos os direitos reservados.</p>
+      </div>
+    </footer>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
